@@ -20,34 +20,29 @@ class UI {
   constructor() {
     this.uiContainer = document.getElementById("content");
     this.city;
-    this.defaultCity = "London";
+    this.defaultCity = "San Diego";
   }
 
   displayUI(data) {
-    //de-structure vars
 
-    //add them to inner HTML
+    //add divs to inner HTML with weather data from fetch
 
     this.uiContainer.innerHTML = `
-        
-    <div class="container-fluid">${data.name}</div>
-    <div class="container-fluid">The Temp: ${data.main.temp} &#176</div>
-    <div class="container-fluid">Humidity: ${data.main.humidity} %</div>
-    <div class="container-fluid">Wind Speed: ${data.wind.speed} MPH</div>
-    <div class="container-fluid"> <img src= "https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png"></img></div>  
-        
+                <div class="container">${data.name}<span class = "imgSpan"><img src= "https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png"></img></span>
+                  <div>Temp: ${data.main.temp} &#176</div>
+                  <div>Wind: ${data.wind.speed} MPH</div>
+                  <div>Humidity ${data.main.humidity} %</div>
+                </div>
         `;
   }
 
-  clearUI() {
-    uiContainer.innerHTML = "";
-  }
+ 
 
-  saveToLS(data) {
+  saveLS(data) {
     localStorage.setItem("city", JSON.stringify(data));
   }
 
-  getFromLS() {
+  getLS() {
     if (localStorage.getItem("city" == null)) {
       return this.defaultCity;
     } else {
@@ -57,12 +52,11 @@ class UI {
     return this.city;
   }
 
-  clearLS() {
-    localStorage.clear();
-  }
+ 
 }
 const ft = new Fetch();
 const ui = new UI();
+
 
 //add event listeners//
 
@@ -72,17 +66,20 @@ button.addEventListener("click", () => {
   const currentVal = search.value;
 
   ft.getCurrent(currentVal).then((data) => {
-    //call a UI method//
+    //calls UI method//
     ui.displayUI(data);
-    //call saveToLS
-    ui.saveToLS(data);
+    
+    //call saveLS
+    ui.saveLS(data);
   });
+  
   test2();
+
 });
 
 //event listener for local storage
 
 window.addEventListener("DOMContentLoaded", () => {
-  const dataSaved = ui.getFromLS();
+  const dataSaved = ui.getLS();
   ui.displayUI(dataSaved);
 });
