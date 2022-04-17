@@ -5,3 +5,15 @@
 aside{
     float: left;
 }
+
+.first{
+    float: right;
+    border-style: solid;
+    margin:auto;
+    padding: auto;
+    justify-self: unset;
+}
+.submit{
+    padding-bottom: 10px;
+    border: 15px;
+}

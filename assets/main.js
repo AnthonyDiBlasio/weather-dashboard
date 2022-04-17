@@ -28,7 +28,7 @@ class UI {
     //add divs to inner HTML with weather data from fetch
 
     this.uiContainer.innerHTML = `
-                <div class="container">${data.name}<span class = "imgSpan"><img src= "https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png"></img></span>
+                <div class=" first container ">${data.name}<span class = "imgSpan"><img src= "https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png"></img></span>
                   <div>Temp: ${data.main.temp} &#176</div>
                   <div>Wind: ${data.wind.speed} MPH</div>
                   <div>Humidity ${data.main.humidity} %</div>
@@ -74,6 +74,7 @@ button.addEventListener("click", () => {
   });
   
   test2();
+  test3();
 
 });
 
