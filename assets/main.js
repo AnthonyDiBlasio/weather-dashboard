@@ -10,9 +10,20 @@ class Fetch {
     );
 
     const data = await response.json();
+    
 
     console.log(data);
+    
+    let lat = data.coord["lat"]
+    let lon =data.coord["lon"]
 
+      await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=31f3c7fba0e24b5ad83d1dc92397b585&units=imperial`)
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(data) {
+                console.log(data);
+            })
     return data;
   }
 }
@@ -32,6 +43,7 @@ class UI {
                   <div>Temp: ${data.main.temp} &#176</div>
                   <div>Wind: ${data.wind.speed} MPH</div>
                   <div>Humidity ${data.main.humidity} %</div>
+                  <div>UVI:</div>
                 </div>
         `;
   }
@@ -63,6 +75,7 @@ const ui = new UI();
 const search = document.getElementById("searchUser");
 const button = document.getElementById("submit");
 button.addEventListener("click", () => {
+  
   const currentVal = search.value;
 
   ft.getCurrent(currentVal).then((data) => {
@@ -74,7 +87,7 @@ button.addEventListener("click", () => {
   });
   
   test2();
-  test3();
+  // test3();
 
 });
 
@@ -84,3 +97,14 @@ window.addEventListener("DOMContentLoaded", () => {
   const dataSaved = ui.getLS();
   ui.displayUI(dataSaved);
 });
+// function test3(){ 
+//   var lat = "${data.city[i].coord[0]}"
+//   var lon = "${data.city[i].coord[1]}"
+//   fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=45&lon=25&appid=31f3c7fba0e24b5ad83d1dc92397b585&units=imperial`)
+//         .then(function(response) {
+//             return response.json();
+//         })
+//         .then(function(data) {
+//             console.log(data);
+//         })
+//       }

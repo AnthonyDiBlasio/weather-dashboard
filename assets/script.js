@@ -2,7 +2,8 @@ var myKey = "31f3c7fba0e24b5ad83d1dc92397b585";
 
  var content2= document.getElementById("content2");
 
-function test2(){     
+function test2(){   
+  
   var currentVal = search.value;
       fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${currentVal}&appid=${myKey}&units=imperial`)
         .then(function(response) {
@@ -66,18 +67,6 @@ console.log(data)
         })
 };
 
-//       var myKey = "31f3c7fba0e24b5ad83d1dc92397b585";
-// var myUnits = "imperial"
+     
 
-// function test3(){ 
-//   var currentVal = search.value
-// {
-//       fetch(`https://api.openweathermap.org/data/2.5/onecall?q=${currentVal}&appid=${myKey}&units=${myUnits}`)
-//         .then(function(response) {
-//             return response.json();
-//         })
-//         .then(function(data) {
-//             console.log(data);
-//         })
-//     }
-// }
+
