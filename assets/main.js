@@ -17,7 +17,6 @@ function WeatherController() {
       console.log('have data');
     }
   }
-    this.city = $( "searchUser").val();
     this.getCurrentData = async (city) => {
       const response = await fetch(
         `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${this.apikey}&units=${this.myunits}`
@@ -46,12 +45,14 @@ function WeatherController() {
   }
 }
 let submit = document.getElementById("submit");
-controller = new WeatherController();
+let controller = new WeatherController();
 
 
 
 submit.addEventListener('click', () => {
-  controller.getCurrentData();
+  this.city = $("#searchUser").val();
+
+  controller.getCurrentData(city);
 })
 // var myKey = "31f3c7fba0e24b5ad83d1dc92397b585";
 
