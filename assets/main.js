@@ -51,8 +51,7 @@ function WeatherController() {
    
     content.innerHTML = 
       `<section class ="weatherCards">
-      <div class="card row-2">
-      <div class="card-body"><img src= "https://openweathermap.org/img/wn/${data.daily[0].weather[0].icon}@2x.png"></img></div>
+      <div class="card-body"><img src= "https://openweathermap.org/img/wn/${data.daily[0].weather[0].icon}@2x.png"></img>
           <div>${city} date: ${data.daily[0].dt}</div>
           <div>Temp: ${data.daily[0].temp.day} &#176</div>
           <div>Wind: ${data.daily[0].wind_speed} MPH</div>
@@ -63,20 +62,17 @@ function WeatherController() {
       </section>
       `;
       content2.innerHTML = ` 
-    <section class ="weatherCards">
-    <div class="card row-2">
-    <div class="card-body"><img src= "https://openweathermap.org/img/wn/${data.daily[0].weather[0].icon}@2x.png"></img></div>
+    <section class =" card weatherCards">
+    <div class="card-body"><img src= "https://openweathermap.org/img/wn/${data.daily[0].weather[0].icon}@2x.png"></img>
         <div>${city} date: ${data.daily[0].dt}</div>
         <div>Temp: ${data.daily[0].temp.day} &#176</div>
         <div>Wind: ${data.daily[0].wind_speed} MPH</div>
         <div>Humidity: ${data.daily[0].humidity} %</div>
-       
       </div>
     </div>
     </section>
-    <section class ="weatherCards">
-    <div class="card row-2">
-    <div class="card-body"><img src= "https://openweathermap.org/img/wn/${data.daily[1].weather[0].icon}@2x.png"></img></div>
+    <section class =" card weatherCards">
+    <div class="card-body"><img src= "https://openweathermap.org/img/wn/${data.daily[1].weather[0].icon}@2x.png"></img>
         <div>${city} date: ${data.daily[1].dt}</div>
         <div>Temp: ${data.daily[1].temp.day} &#176</div>
         <div>Wind: ${data.daily[1].wind_speed} MPH</div>
@@ -84,9 +80,8 @@ function WeatherController() {
       </div>
     </div>
     </section>
-    <section class ="weatherCards">
-    <div class="card row-2">
-    <div class="card-body"><img src= "https://openweathermap.org/img/wn/${data.daily[2].weather[0].icon}@2x.png"></img></div>
+    <section class =" card weatherCards">
+    <div class="card-body"><img src= "https://openweathermap.org/img/wn/${data.daily[2].weather[0].icon}@2x.png"></img>
         <div>${city} date: ${data.daily[2].dt}</div>
         <div>Temp: ${data.daily[2].temp.day} &#176</div>
         <div>Wind: ${data.daily[2].wind_speed} MPH</div>
@@ -94,9 +89,8 @@ function WeatherController() {
       </div>
     </div>
     </section>
-    <section class ="weatherCards">
-    <div class="card row-2">
-    <div class="card-body"><img src= "https://openweathermap.org/img/wn/${data.daily[3].weather[0].icon}@2x.png"></img></div>
+    <section class =" card weatherCards">
+    <div class="card-body"><img src= "https://openweathermap.org/img/wn/${data.daily[3].weather[0].icon}@2x.png"></img>
         <div>${city} date: ${data.daily[3].dt}</div>
         <div>Temp: ${data.daily[3].temp.day} &#176</div>
         <div>Wind: ${data.daily[3].wind_speed} MPH</div>
@@ -104,9 +98,8 @@ function WeatherController() {
       </div>
     </div>
     </section>
-    <section class ="weatherCards">
-    <div class="card myrow row-2">
-    <div class="card-body"><img src= "https://openweathermap.org/img/wn/${data.daily[4].weather[0].icon}@2x.png"></img></div>
+    <section class =" card weatherCards">
+    <div class="card-body"><img src= "https://openweathermap.org/img/wn/${data.daily[4].weather[0].icon}@2x.png"></img>
         <div>${city} date: ${data.daily[4].dt}</div>
         <div>Temp: ${data.daily[4].temp.day} &#176</div>
         <div>Wind: ${data.daily[4].wind_speed} MPH</div>
@@ -115,7 +108,7 @@ function WeatherController() {
     </div>
     </section>
     `;
-  cityList.innerHTML = `<div>${city}</div>`
+  cityList.innerHTML = `<div class = "container">${city}</div>`
     
 };
 
