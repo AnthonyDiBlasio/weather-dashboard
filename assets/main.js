@@ -1,11 +1,8 @@
-
 function WeatherController() {
-
   this.apikey = "31f3c7fba0e24b5ad83d1dc92397b585"
   this.myunits = "imperial"
   this.currentData = null
   this.oneCallData = null
-  
   this.displayOnecall = () => {
     console.log(this.oneCallData)
     if (this.oneCallData != null) {
@@ -108,8 +105,7 @@ function WeatherController() {
     </div>
     </section>
     `;
-  cityList.innerHTML = `<div class = "container">${city}</div>`
-    
+ 
 };
 
 }
@@ -119,4 +115,4 @@ let controller = new WeatherController();
 submit.addEventListener('click', () => {
   this.city = $("#searchUser").val();
   controller.getCurrentData(city);
-})
+});
